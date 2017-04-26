@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS-GRID-FLEX-DEMO</title>
+    <link type="text/css" rel="stylesheet" href="flex.css">
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+    body {
+        font: normal 16px sans-serif;
+        color: #4e4544;
+        background-color: #eee;
+    } 
+    #changeLayout {
+        position: fixed;
+        left: 20px;
+        padding: 8px 25px;
+        cursor: pointer;
+        text-transform: uppercase;
+        color: #fff;
+        border: none;
+        background-color: #03a9f4;
+    }
+    
+    #grid-container {
+        display: none;
+    }
+    </style>
+</head>
+
+<body>
+    <button id='changeLayout'>CHANGE LAYOUT</button>
+    <div class="container" id="flex-container">
+        <header>
+            <nav>
+                <li><a href="#"><h1>Header</h1></a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+            </nav>
+            <button>Button</button>
+        </header>
+        <div class="main-and-sidebar-wrapper">
+            <section class="main">
+                <h2>Flexbox Layout</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                <img src="http://demo.tutorialzine.com/2017/03/css-grid-vs-flexbox/demo/landscape.jpg">
+            </section>
+            <aside class="sidebar">
+                <h3>Sidebar</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+            </aside>
+        </div>
+        <footer>
+            <h3>Footer</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </footer>
+    </div>
+    <div class="container" id="grid-container">
+        <header>
+            <nav>
+                <li><a href="#"><h1>Header</h1></a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+            </nav>
+            <button>Button</button>
+        </header>
+        <section class="main">
+            <h2>Grid Layout</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+            <img src="http://demo.tutorialzine.com/2017/03/css-grid-vs-flexbox/demo/landscape.jpg">
+        </section>
+        <aside class="sidebar">
+            <h3>Sidebar</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+        </aside>
+        <footer>
+            <h3>Footer</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </footer>
+    </div>
+    <script>
+    let link = document.getElementsByTagName('link')[0],
+        changeLayout = document.getElementById('changeLayout'),
+        flexContainer = document.getElementById('flex-container'),
+        gridContainer = document.getElementById('grid-container'),
+        grid = false
+    changeLayout.onclick = () => {
+        if (grid) {
+            grid = false;
+            flexContainer.style.display = "flex";
+            gridContainer.style.display = "none";
+            link.href = "flex.css";
+        } else {
+            grid = true;
+            gridContainer.style.display = "grid";
+            flexContainer.style.display = "none";
+            link.href = "grid.css";
+        }
+    }
+    </script>
+</body>
+
+</html>
